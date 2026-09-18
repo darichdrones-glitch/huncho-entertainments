@@ -1,3 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HUNCHO ENTERTAINMENTS | From Atlantis to the World</title>
+
+<meta name="description" content="HUNCHO ENTERTAINMENTS — Independent music and entertainment from Atlantis to the world.">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.gold {
+    color: #d4a72c;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background: rgba(5,5,5,0.97);
+    border-bottom: 1px solid #8c6a18;
+
+    min-height: 75px;
+    padding: 15px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #d4a72c;
+}
+
+.logo span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: #fff;
+    text-align: center;
+    margin-top: -4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4a72c;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 88vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.92)
+        ),
+        radial-gradient(
+            circle at center,
+            #4b3708 0%,
+            #171105 35%,
+            #050505 72%
+        );
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-small {
+    color: #d4a72c;
+    font-size: 14px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 16vw, 145px);
+    line-height: 0.9;
+    letter-spacing: 6px;
+    font-weight: 900;
+    color: #d4a72c;
+}
+
+.hero h2 {
+    font-size: clamp(18px, 4vw, 32px);
+    letter-spacing: 10px;
+    margin-top: 18px;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 18px;
+    margin: 25px 0 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+
+    background: #d4a72c;
+    color: #050505;
+
+    border-radius: 4px;
+
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: #f0c43b;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #d4a72c;
+    border: 1px solid #d4a72c;
+    margin-left: 8px;
+}
+
+.btn-outline:hover {
+    background: #d4a72c;
+    color: #050505;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 85px 7%;
+}
+
+.section-label {
+    text-align: center;
+    color: #d4a72c;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.section-description {
+    text-align: center;
+    color: #999;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    background: #0b0b0b;
+    border-top: 1px solid #181818;
+    border-bottom: 1px solid #181818;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+
+    padding: 35px 7%;
+}
+
+.stat h3 {
+    color: #d4a72c;
+    font-size: 32px;
+}
+
+.stat p {
+    color: #888;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: #0e0e0e;
+    border: 1px solid #242424;
+    border-radius: 8px;
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #d4a72c;
+}
+
+.card-image {
+    height: 230px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b2b06,
+            #111,
+            #050505
+        );
+
+    color: #d4a72c;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.card h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card-role {
+    color: #d4a72c;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-card {
+    padding: 25px;
+    background: #0e0e0e;
+    border: 1px solid #242424;
+    border-radius: 8px;
+}
+
+.music-cover {
+    height: 210px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #5a4208,
+            #161107 45%,
+            #050505
+        );
+
+    color: #d4a72c;
+    font-size: 30px;
+    font-weight: 900;
+
+    margin-bottom: 20px;
+}
+
+.music-card h3 {
+    margin-bottom: 5px;
+}
+
+.artist-name {
+    color: #999;
+    font-size: 14px;
+}
+
+.listen {
+    display: inline-block;
+    margin-top: 18px;
+    color: #d4a72c;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* =========================
+   VIDEOS
+========================= */
+
+.video-card {
+    background: #0e0e0e;
+    border: 1px solid #242424;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-box {
+    height: 210px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #241b05,
+            #080808
+        );
+}
+
+.play {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #d4a72c;
+    color: #050505;
+
+    font-size: 25px;
+    padding-left: 4px;
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h3 {
+    margin-bottom: 5px;
+}
+
+.video-info p {
+    color: #888;
+    font-size: 14px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    background: #0a0a0a;
+}
+
+.about {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about p {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* =========================
+   DEMO SECTION
+========================= */
+
+.demo {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #302306,
+            #080808 65%
+        );
+
+    border-top: 1px solid #211905;
+    border-bottom: 1px solid #211905;
+}
+
+.demo p {
+    color: #aaa;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+
+    padding: 35px;
+
+    background: #0e0e0e;
+    border: 1px solid #242424;
+    border-radius: 8px;
+}
+
+.contact-box p {
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.socials a {
+    padding: 12px 20px;
+
+    border: 1px solid #d4a72c;
+    color: #d4a72c;
+
+    border-radius: 4px;
+
+    font-weight: bold;
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: #d4a72c;
+    color: #050505;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #030303;
+    border-top: 1px solid #1c1c1c;
+
+    color: #666;
+    font-size: 13px;
+}
+
+footer strong {
+    color: #d4a72c;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 700px) {
+
+    nav {
+        padding: 14px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 78vh;
+    }
+
+    .hero h1 {
+        letter-spacing: 3px;
+    }
+
+    .hero h2 {
+        letter-spacing: 5px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        display: block;
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+
+    .btn-outline {
+        margin-left: auto;
+    }
+
+    section {
+        padding: 65px 5%;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="#home">
+        <div class="logo">
+            HUNCHO
+            <span>ENTERTAINMENTS</span>
+        </div>
+    </a>
+
+    <div class="nav-links">
+        <a href="#home">HOME</a>
+        <a href="#artists">ARTISTS</a>
+        <a href="#music">MUSIC</a>
+        <a href="#videos">VIDEOS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            ATLANTIS • SOUTH AFRICA
+        </div>
+
+        <h1>HUNCHO</h1>
+
+        <h2>ENTERTAINMENTS</h2>
+
+        <p>
+            From Atlantis to the world.
+        </p>
+
+        <a href="#artists" class="btn">
+            DISCOVER THE LABEL
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+            CONTACT US
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="stats">
+
+    <div class="stat">
+        <h3>01</h3>
+        <p>Independent Label</p>
+    </div>
+
+    <div class="stat">
+        <h3>ATL</h3>
+        <p>Our Home</p>
+    </div>
+
+    <div class="stat">
+        <h3>∞</h3>
+        <p>Big Dreams</p>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ARTISTS
+========================= -->
+
 <section id="artists">
 
     <div class="section-label">
@@ -9,29 +704,31 @@
     </h2>
 
     <p class="section-description">
-        Meet the artists representing the HUNCHO ENTERTAINMENTS movement.
+        Meet the artists and creatives representing the HUNCHO ENTERTAINMENTS movement.
     </p>
+
 
     <div class="grid">
 
-        <!-- FRANCO"0" -->
+
+        <!-- ARTIST 1 -->
 
         <div class="card">
 
             <div class="card-image">
-                FRANCO"0"
+                ARTIST
             </div>
 
             <div class="card-content">
 
-                <h3>Franco"0"</h3>
+                <h3>Artist Name</h3>
 
                 <div class="card-role">
                     Rapper • Artist
                 </div>
 
                 <p>
-                    Artist representing HUNCHO ENTERTAINMENTS from Atlantis.
+                    Add your artist's bio and description here.
                 </p>
 
             </div>
@@ -39,30 +736,360 @@
         </div>
 
 
-        <!-- HUNCHODRACO -->
+        <!-- ARTIST 2 -->
 
         <div class="card">
 
             <div class="card-image">
-                HUNCHODRACO
+                ARTIST
             </div>
 
             <div class="card-content">
 
-                <h3>HunchoDraco</h3>
+                <h3>Artist Name</h3>
 
                 <div class="card-role">
                     Rapper • Artist
                 </div>
 
                 <p>
-                    Artist representing HUNCHO ENTERTAINMENTS from Atlantis.
+                    Add your artist's bio and description here.
                 </p>
 
             </div>
+
+        </div>
+
+
+        <!-- ARTIST 3 -->
+
+        <div class="card">
+
+            <div class="card-image">
+                ARTIST
+            </div>
+
+            <div class="card-content">
+
+                <h3>Artist Name</h3>
+
+                <div class="card-role">
+                    Artist • Musician
+                </div>
+
+                <p>
+                    Add your artist's bio and description here.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<section id="music">
+
+    <div class="section-label">
+        RELEASES
+    </div>
+
+    <h2 class="title">
+        LATEST MUSIC
+    </h2>
+
+    <p class="section-description">
+        Discover the latest music released through HUNCHO ENTERTAINMENTS.
+    </p>
+
+
+    <div class="grid">
+
+
+        <!-- SONG 1 -->
+
+        <div class="music-card">
+
+            <div class="music-cover">
+                HUNCHO
+            </div>
+
+            <h3>Song Title</h3>
+
+            <div class="artist-name">
+                Artist Name
+            </div>
+
+            <a href="#" class="listen">
+                LISTEN NOW →
+            </a>
+
+        </div>
+
+
+        <!-- SONG 2 -->
+
+        <div class="music-card">
+
+            <div class="music-cover">
+                HUNCHO
+            </div>
+
+            <h3>Song Title</h3>
+
+            <div class="artist-name">
+                Artist Name
+            </div>
+
+            <a href="#" class="listen">
+                LISTEN NOW →
+            </a>
+
+        </div>
+
+
+        <!-- SONG 3 -->
+
+        <div class="music-card">
+
+            <div class="music-cover">
+                HUNCHO
+            </div>
+
+            <h3>Song Title</h3>
+
+            <div class="artist-name">
+                Artist Name
+            </div>
+
+            <a href="#" class="listen">
+                LISTEN NOW →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VIDEOS
+========================= -->
+
+<section id="videos">
+
+    <div class="section-label">
+        VISUALS
+    </div>
+
+    <h2 class="title">
+        MUSIC VIDEOS
+    </h2>
+
+    <p class="section-description">
+        Watch the latest visuals from the HUNCHO ENTERTAINMENTS artists.
+    </p>
+
+
+    <div class="grid">
+
+
+        <div class="video-card">
+
+            <div class="video-box">
+
+                <a href="#" class="play">
+                    ▶
+                </a>
+
+            </div>
+
+            <div class="video-info">
+
+                <h3>Music Video Title</h3>
+
+                <p>
+                    Artist Name • Official Video
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <div class="video-box">
+
+                <a href="#" class="play">
+                    ▶
+                </a>
+
+            </div>
+
+            <div class="video-info">
+
+                <h3>Music Video Title</h3>
+
+                <p>
+                    Artist Name • Official Video
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about">
+
+        <div class="section-label">
+            OUR STORY
+        </div>
+
+        <h2 class="title">
+            ABOUT HUNCHO
+        </h2>
+
+        <p>
+
+            HUNCHO ENTERTAINMENTS is an independent entertainment label
+            representing music, creativity and talent from Atlantis,
+            South Africa.
+
+            <br><br>
+
+            Our mission is to create opportunities for artists,
+            develop new talent and build a platform where creativity
+            can reach audiences beyond our community.
+
+            <br><br>
+
+            <strong class="gold">
+                FROM ATLANTIS TO THE WORLD.
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SUBMIT DEMO
+========================= -->
+
+<section class="demo">
+
+    <div class="section-label">
+        NEW TALENT
+    </div>
+
+    <h2 class="title">
+        SUBMIT YOUR DEMO
+    </h2>
+
+    <p>
+        Are you an artist looking for an opportunity?
+        Send HUNCHO ENTERTAINMENTS your music and introduce yourself.
+    </p>
+
+    <!-- CHANGE THE EMAIL BELOW -->
+
+    <a
+        href="mailto:your@email.com?subject=HUNCHO ENTERTAINMENTS Demo Submission"
+        class="btn"
+    >
+        SUBMIT DEMO
+    </a>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact">
+
+    <div class="section-label">
+        GET IN TOUCH
+    </div>
+
+    <h2 class="title">
+        CONTACT HUNCHO
+    </h2>
+
+    <div class="contact-box">
+
+        <p>
+            For bookings, collaborations, artist enquiries,
+            business opportunities and general enquiries.
+        </p>
+
+
+        <div class="socials">
+
+            <!-- REPLACE # WITH YOUR REAL LINKS -->
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+            <a href="#">
+                YouTube
+            </a>
+
+            <a href="mailto:your@email.com">
+                Email
+            </a>
 
         </div>
 
     </div>
 
 </section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026
+    <strong>HUNCHO ENTERTAINMENTS</strong>
+
+    <br>
+
+    From Atlantis to the world.
+
+</footer>
+
+
+</body>
+    </html>
